@@ -7,8 +7,9 @@ export const TodoForm = ({
   setInputTodo,
 }) => {
   return (
-    <div className="form-container">
+    <div>
       <form onSubmit={handleSubmit}>
+        <h1>Todo-List App</h1>
         <input
           type="text"
           value={inputTodo}

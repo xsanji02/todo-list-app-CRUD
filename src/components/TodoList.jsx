@@ -1,14 +1,8 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
-import { FaCheckCircle } from "react-icons/fa";
 
-export const TodoList = ({
-  handleCheck,
-  handleUpdate,
-  handleDelete,
-  inputTodos,
-}) => {
+export const TodoList = ({ handleUpdate, handleDelete, inputTodos }) => {
   return (
     <div>
       {inputTodos.map((list) => {
@@ -17,9 +11,6 @@ export const TodoList = ({
             <li className="list-item">
               <span key={list.id}>{list.inputTodo}</span>
               <div className="icons">
-                <span onClick={() => handleCheck(list.id)}>
-                  <FaCheckCircle />
-                </span>
                 <span
                   className="span-update"
                   onClick={() => handleUpdate(list.id)}

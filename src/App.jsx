@@ -10,23 +10,20 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //this code determine if you type something in input elem it will only allow to pass 
-    //if you type anything but not empty string then create a array of object id: for unique key of each list you create
-    //and then it will render and make 1st state to empty string 
+    //will not pass if empty string
     if (inputTodo !== "") {
       setInputTodos([{ id: Date.now(), inputTodo }, ...inputTodos]);
       setInputTodo("");
     }
-    //3rd state have a false initial value so if 3rd state have a value "false" it will update the add button and change to Edit
+    //if inputEdit state is truthy the state will be true and button update on edit mode
     if (inputEdit) {
-      //create new var called edited then find same id that handleUpdate sent
-
+      //find in the array if same unique id and stored it in const edited
       const edited = inputTodos.find((edit) => edit.id === inputEdit);
-      //updatedEdited will create new var and map out the list to find the same id as edited
+      //map over the inputTodos if equal to edited
       const updatedEdited = inputTodos.map((i) =>
-      //if id is equal to edited it will send back the updated inputTodo
-      //if id is not equal it will just send back the prevState 
-      i.id === edited.id
+        //use ternary condition if true create new object but same id and create new inputTodo
+        //if false create new object but same id: and same inputTodo: 
+        i.id === edited.id
           ? (i = { id: i.id, inputTodo })
           : { id: i.id, inputTodo: i.inputTodo }
       );
@@ -36,43 +33,35 @@ function App() {
       setInputEdit(false);
     }
   };
-  //continue later this is about line-through
-  const handleCheck = (id) => {
-    const checkList = inputTodos.find((check) => check.id === id);
-    if (checkList) {
-    }
-  };
-  //filter out the id if is not equal to the selected parameter
-  //and create new array then send it to the main state(array)
+  //handle delete function 
   const handleDelete = (id) => {
     const deleteList = inputTodos.filter((del) => del.id !== id);
     setInputTodos([...deleteList]);
   };
-  //this code will use find method to find the same id 
-  //if the id (param) equally to find (param) then take it and send to the 1st state
-  //after that the id of updateList will send to 3rd State
+  //handle update function find the same id on inputTodos array and store in updateList 
   const handleUpdate = (id) => {
     const updateList = inputTodos.find((find) => find.id === id);
+    //send updatelist in setInputTodo
     setInputTodo(updateList.inputTodo);
     setInputEdit(id);
   };
 
   return (
     <div className="parent-container">
-      <h1>Todo-List App</h1>
-      <TodoForm
-        handleSubmit={handleSubmit}
-        inputTodo={inputTodo}
-        inputEdit={inputEdit}
-        setInputTodo={setInputTodo}
-      />
       <div className="form-container">
-        <TodoList
-          handleCheck={handleCheck}
-          handleUpdate={handleUpdate}
-          handleDelete={handleDelete}
-          inputTodos={inputTodos}
+        <TodoForm
+          handleSubmit={handleSubmit}
+          inputTodo={inputTodo}
+          inputEdit={inputEdit}
+          setInputTodo={setInputTodo}
         />
+        <div className="form-container">
+          <TodoList
+            handleUpdate={handleUpdate}
+            handleDelete={handleDelete}
+            inputTodos={inputTodos}
+          />
+        </div>
       </div>
     </div>
   );
