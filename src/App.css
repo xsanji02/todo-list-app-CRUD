@@ -5,24 +5,47 @@
   font-family: "Prompt", sans-serif;
 }
 
-body {
-  background-color: #9BA4B5;
-}
-
 .parent-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   flex-direction: column;
-  background: #212A3E; 
+  background: #212a3e;
 }
 
 .form-container {
-  background-color: #9BA4B5;
+  background-color: #9ba4b5;
   width: 33rem;
   padding-bottom: 2rem;
   border-radius: 15px;
+}
+
+#light .parent-container {
+  background-color: rgb(208, 232, 242);
+}
+
+#light .form-container {
+  background-color: rgb(121, 163, 177);
+}
+
+
+
+.switch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 33rem;
+  padding: 1rem 1rem 0 0;
+}
+
+.switch > span {
+  margin-right: 5px;
+}
+
+.darkmode, .lightmode {
+  width: 1.6rem;
+  height: 1.7rem;
 }
 
 h1 {
@@ -47,7 +70,7 @@ input {
   height: 3rem;
   margin: 3rem 0 1.3rem 15px;
   border: none;
-  background-color: #F1F6F9;
+  background-color: #f1f6f9;
   border-radius: 5px;
   font-size: 1.2rem;
   color: rgb(27, 26, 26);
@@ -65,7 +88,7 @@ form > button {
   height: 3rem;
   margin-left: 7px;
   border: none;
-  background-color: #F1F6F9;
+  background-color: #f1f6f9;
   border-radius: 5px;
 }
 
@@ -82,7 +105,7 @@ form > button:hover {
   list-style: none;
   display: flex;
   align-items: center;
-  background-color: #F1F6F9;
+  background-color: #f1f6f9;
   width: 29rem;
   margin-top: 15px;
   margin-left: 1.7rem;
@@ -125,48 +148,48 @@ button {
 
 @media (max-width: 600px) {
   body {
-    background-color: #9BA4B5;
+    background-color: #9ba4b5;
   }
-  
+
   .parent-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background: #212A3E; 
+    background: #212a3e;
   }
-  
+
   .form-container {
-    background-color: #9BA4B5;
+    background-color: #9ba4b5;
     width: 25rem;
     padding-bottom: 2rem;
     border-radius: 15px;
   }
-  
+
   h1 {
     text-align: center;
     margin-top: 2rem;
   }
-  
+
   h1,
   button,
   input {
     user-select: none;
   }
-  
+
   input::placeholder {
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: rgb(27, 26, 26);
     font-weight: 700;
   }
-  
+
   input {
     width: 22rem;
     height: 2.2rem;
     margin: 2rem 0 5px 15px;
     border: none;
-    background-color: #F1F6F9;
+    background-color: #f1f6f9;
     border-radius: 5px;
     font-size: 1rem;
     color: rgb(27, 26, 26);
@@ -174,40 +197,40 @@ button {
     text-indent: 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   }
-  
+
   form > input:focus {
     outline: none;
   }
-  
+
   form > button {
     width: 10rem;
     height: 1.4rem;
     margin: 0 0 10px 7rem;
     border: none;
-    background-color: #F1F6F9;
+    background-color: #f1f6f9;
     border-radius: 5px;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
-  
+
   form {
     margin-bottom: 0;
   }
-  
+
   form > button:hover {
     scale: 1.1;
     color: #394867;
   }
-  
+
   .list-item {
     list-style: none;
     display: flex;
     align-items: center;
-    background-color: #F1F6F9;
+    background-color: #f1f6f9;
     width: 20rem;
-    margin-top: .8rem;
+    margin-top: 0.8rem;
     margin-left: 1.7rem;
     padding: 0.5rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 500;
     font-style: italic;
     text-transform: capitalize;
@@ -215,31 +238,31 @@ button {
     word-break: break-all;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   }
-  
+
   .list-item > span {
     flex: 1;
   }
-  
+
   .list-item > button {
     height: 2.5rem;
     width: 4.3rem;
   }
-  
+
   button {
     font-size: 0.9rem;
     font-weight: 800;
     cursor: pointer;
   }
-  
+
   .icons > span {
     margin-left: 8px;
     cursor: pointer;
   }
-  
+
   .edit-icon:hover {
     color: #394867;
   }
-  
+
   .del-icon:hover {
     color: #394867;
   }
@@ -247,85 +270,85 @@ button {
 
 @media (max-width: 400px) {
   body {
-    background-color: #9BA4B5;
+    background-color: #9ba4b5;
   }
-  
+
   .parent-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background: #212A3E; 
+    background: #212a3e;
   }
-  
+
   .form-container {
-    background-color: #9BA4B5;
+    background-color: #9ba4b5;
     width: 20rem;
     padding-bottom: 1rem;
     border-radius: 15px;
   }
-  
+
   h1 {
     text-align: center;
     margin-top: 1.2rem;
   }
-  
+
   h1,
   button,
   input {
     user-select: none;
   }
-  
+
   input::placeholder {
-    font-size: .73rem;
+    font-size: 0.73rem;
     color: rgb(27, 26, 26);
     font-weight: 700;
   }
-  
+
   input {
     width: 18rem;
     height: 1.8rem;
     margin: 1.2rem 0 5px 15px;
     border: none;
-    background-color: #F1F6F9;
+    background-color: #f1f6f9;
     border-radius: 5px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: rgb(27, 26, 26);
     font-weight: 700;
     text-indent: 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   }
-  
+
   form > input:focus {
     outline: none;
   }
-  
+
   form > button {
     width: 7rem;
     height: 1.3rem;
     margin-left: 7rem;
     border: none;
-    background-color: #F1F6F9;
+    background-color: #f1f6f9;
     border-radius: 5px;
-    font-size: .67rem;
+    font-size: 0.67rem;
   }
 
   form > button:hover {
     scale: 1.1;
     color: #394867;
   }
-  
+
   .list-item {
     list-style: none;
     display: flex;
     align-items: center;
-    background-color: #F1F6F9;
+    background-color: #f1f6f9;
     width: 18rem;
-    margin-top: .8rem;
+    margin-top: 0.8rem;
     margin-left: 1rem;
     padding: 0.4rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 700;
     font-style: italic;
     text-transform: capitalize;
@@ -333,31 +356,31 @@ button {
     word-break: break-all;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   }
-  
+
   .list-item > span {
     flex: 1;
   }
-  
+
   .list-item > button {
     height: 2.5rem;
     width: 4.3rem;
   }
-  
+
   button {
     font-size: 0.9rem;
     font-weight: 800;
     cursor: pointer;
   }
-  
+
   .icons > span {
     margin-left: 8px;
     cursor: pointer;
   }
-  
+
   .edit-icon:hover {
     color: #394867;
   }
-  
+
   .del-icon:hover {
     color: #394867;
   }

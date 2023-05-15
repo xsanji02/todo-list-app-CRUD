@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { TodoForm } from "./components/TodoForm";
 import { TodoList } from "./components/TodoList";
+
 import "./App.css";
 
 function App() {
   const [inputTodo, setInputTodo] = useState("");
   const [inputTodos, setInputTodos] = useState([]);
   const [inputEdit, setInputEdit] = useState(false);
+  const [theme, setTheme] = useState("light");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,25 +47,32 @@ function App() {
     setInputTodo(updateList.inputTodo);
     setInputEdit(id);
   };
+  const toggleTheme = () => {
+    setTheme((prevState) => (prevState === "light" ? "dark" : "light"));
+  };
 
   return (
-    <div className="parent-container">
-      <div className="form-container">
-        <TodoForm
-          handleSubmit={handleSubmit}
-          inputTodo={inputTodo}
-          inputEdit={inputEdit}
-          setInputTodo={setInputTodo}
-        />
-        <div className="form-container">
-          <TodoList
-            handleUpdate={handleUpdate}
-            handleDelete={handleDelete}
-            inputTodos={inputTodos}
-          />
+      <div className="main" id={theme}>
+        <div className="parent-container" >
+          <div className="form-container">
+            <TodoForm
+              handleSubmit={handleSubmit}
+              inputTodo={inputTodo}
+              inputEdit={inputEdit}
+              setInputTodo={setInputTodo}
+              toggleTheme={toggleTheme}
+              theme={theme}
+            />
+            <div className="form-container">
+              <TodoList
+                handleUpdate={handleUpdate}
+                handleDelete={handleDelete}
+                inputTodos={inputTodos}
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 
