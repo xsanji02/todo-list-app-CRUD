@@ -22,8 +22,6 @@ export const TodoForm = ({
           )}
         </span>
         <Switch
-          id="toggle"
-          className='toggleTheme'
           onChange={toggleTheme}
           checked={theme === "dark"}
         />
