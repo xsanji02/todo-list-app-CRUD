@@ -29,7 +29,16 @@
   background-color: rgb(121, 163, 177);
 }
 
+.switch > span {
+  margin-right: 5px;
+}
 
+.darkmode,
+.lightmode {
+  margin-top: 4px;
+  width: 1.6rem;
+  height: 1.7rem;
+}
 
 .switch {
   display: flex;
@@ -37,15 +46,6 @@
   align-items: center;
   width: 33rem;
   padding: 1rem 1rem 0 0;
-}
-
-.switch > span {
-  margin-right: 5px;
-}
-
-.darkmode, .lightmode {
-  width: 1.6rem;
-  height: 1.7rem;
 }
 
 h1 {
@@ -167,6 +167,33 @@ button {
     border-radius: 15px;
   }
 
+  #light .parent-container {
+    background-color: rgb(208, 232, 242);
+  }
+
+  #light .form-container {
+    background-color: rgb(121, 163, 177);
+  }
+
+  .switch > span {
+    margin-right: 3px;
+  }
+
+  .darkmode,
+  .lightmode {
+    margin-top: 5px;
+    width: 1.3rem;
+    height: 1.2rem;
+  }
+
+  .switch {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 25rem;
+    padding: 0.5rem 0.5rem 0 0;
+  }
+
   h1 {
     text-align: center;
     margin-top: 2rem;
@@ -187,7 +214,7 @@ button {
   input {
     width: 22rem;
     height: 2.2rem;
-    margin: 2rem 0 5px 15px;
+    margin: 2rem 0 5px 24px;
     border: none;
     background-color: #f1f6f9;
     border-radius: 5px;
@@ -287,6 +314,28 @@ button {
     width: 20rem;
     padding-bottom: 1rem;
     border-radius: 15px;
+  }
+
+  #light .parent-container {
+    background-color: rgb(208, 232, 242);
+  }
+
+  #light .form-container {
+    background-color: rgb(121, 163, 177);
+  }
+
+  .darkmode,
+  .lightmode {
+    width: 1rem;
+    height: 1.1rem;
+  }
+
+  .switch {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20rem;
+    padding: 0.5rem 0.5rem 0 0;
   }
 
   h1 {

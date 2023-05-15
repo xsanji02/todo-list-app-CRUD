@@ -1,5 +1,5 @@
 import React from "react";
-import ReactSwitch from "react-switch";
+import {Switch} from "react-switch";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 
@@ -14,8 +14,19 @@ export const TodoForm = ({
   return (
     <div>
       <div className="switch">
-        <span>{theme === "light" ? <MdDarkMode className="darkmode" /> : <MdLightMode className="lightmode" />}</span>
-        <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
+        <span>
+          {theme === "light" ? (
+            <MdDarkMode className="darkmode" />
+          ) : (
+            <MdLightMode className="lightmode" />
+          )}
+        </span>
+        <Switch
+          id="toggle"
+          className='toggleTheme'
+          onChange={toggleTheme}
+          checked={theme === "dark"}
+        />
       </div>
       <div>
         <form onSubmit={handleSubmit}>
