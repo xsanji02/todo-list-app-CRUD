@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { TodoForm } from "./components/TodoForm";
 import { TodoList } from "./components/TodoList";
 import "./App.css";
@@ -23,7 +23,7 @@ function App() {
       //map over the inputTodos if equal to edited
       const updatedEdited = inputTodos.map((i) =>
         //use ternary condition if true create new object but same id and create new inputTodo
-        //if false create new object but same id: and same inputTodo: 
+        //if false create new object but same id: and same inputTodo:
         i.id === edited.id
           ? (i = { id: i.id, inputTodo })
           : { id: i.id, inputTodo: i.inputTodo }
@@ -34,12 +34,12 @@ function App() {
       setInputEdit(false);
     }
   };
-  //handle delete function 
+  //handle delete function
   const handleDelete = (id) => {
     const deleteList = inputTodos.filter((del) => del.id !== id);
     setInputTodos([...deleteList]);
   };
-  //handle update function find the same id on inputTodos array and store in updateList 
+  //handle update function find the same id on inputTodos array and store in updateList
   const handleUpdate = (id) => {
     const updateList = inputTodos.find((find) => find.id === id);
     //send updatelist in setInputTodo
@@ -51,27 +51,27 @@ function App() {
   };
 
   return (
-      <div className="main" id={theme}>
-        <div className="parent-container" >
+    <div className="main" id={theme}>
+      <div className="parent-container">
+        <div className="form-container">
+          <TodoForm
+            handleSubmit={handleSubmit}
+            inputTodo={inputTodo}
+            inputEdit={inputEdit}
+            setInputTodo={setInputTodo}
+            toggleTheme={toggleTheme}
+            theme={theme}
+          />
           <div className="form-container">
-            <TodoForm
-              handleSubmit={handleSubmit}
-              inputTodo={inputTodo}
-              inputEdit={inputEdit}
-              setInputTodo={setInputTodo}
-              toggleTheme={toggleTheme}
-              theme={theme}
+            <TodoList
+              handleUpdate={handleUpdate}
+              handleDelete={handleDelete}
+              inputTodos={inputTodos}
             />
-            <div className="form-container">
-              <TodoList
-                handleUpdate={handleUpdate}
-                handleDelete={handleDelete}
-                inputTodos={inputTodos}
-              />
-            </div>
           </div>
         </div>
       </div>
+    </div>
   );
 }
 
